@@ -1,0 +1,261 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>ConnectSphere | Social Network</title>
+    <meta name="description" content="ConnectSphere — connect, share moments and discover your community.">
+
+    <link rel="stylesheet" href="/css/style.css">
+    <script src="/js/app.js" defer></script>
+    <a class="nav-link" href="/login.html"><span>⇥</span> Login</a>
+<a class="nav-link" href="/register.html"><span>＋</span> Register</a>
+</head>
+<body>
+    <header class="topbar">
+        <a href="/" class="brand">
+            <span class="brand-icon">C</span>
+            <span>Connect<span class="brand-accent">Sphere</span></span>
+        </a>
+
+        <label class="search-box">
+            <span>⌕</span>
+            <input type="search" id="searchInput" placeholder="Search people and posts...">
+        </label>
+
+        <div class="top-actions">
+            <button class="icon-button" id="themeToggle" aria-label="Toggle theme">☼</button>
+            <button class="icon-button notification-button" aria-label="Notifications">♧</button>
+            <div class="avatar avatar-small">A</div>
+        </div>
+    </header>
+
+    <div class="app-layout">
+        <aside class="sidebar">
+            <div class="profile-mini">
+                <div class="avatar avatar-large">A</div>
+                <div>
+                    <h3>Welcome, Creator!</h3>
+                    <p>@yourusername</p>
+                </div>
+            </div>
+
+            <p class="menu-heading">MENU</p>
+
+            <nav class="navigation">
+                <a class="nav-link active" href="#home"><span>⌂</span> Home</a>
+                <a class="nav-link" href="#feed"><span>▤</span> My Feed</a>
+                <a class="nav-link" href="#discover"><span>✧</span> Discover</a>
+                <a class="nav-link" href="#messages"><span>✉</span> Messages <span class="nav-count">3</span></a>
+                <a class="nav-link" href="#notifications"><span>♧</span> Notifications</a>
+                <a class="nav-link" href="#profile"><span>♙</span> My Profile</a>
+            </nav>
+
+            <div class="sidebar-card">
+                <span class="sparkle">✦</span>
+                <h3>Your space, your story.</h3>
+                <p>Share your ideas and connect with people who inspire you.</p>
+            </div>
+
+            <div class="sidebar-footer">ConnectSphere · Version 1.0</div>
+        </aside>
+
+        <main class="main-content" id="home">
+            <section class="welcome-section">
+                <div>
+                    <p class="eyebrow">YOUR COMMUNITY, YOUR WORLD</p>
+                    <h1>Good to see you, <span>Creator!</span> ✨</h1>
+                    <p class="muted">Discover what's happening in your community today.</p>
+                </div>
+                <div class="date-pill" id="currentDate">Your daily space</div>
+            </section>
+
+            <section class="stories-section">
+                <div class="section-heading">
+                    <div>
+                        <h2>Stories</h2>
+                        <p class="muted">Little moments, big connections.</p>
+                    </div>
+                    <span class="subtle-label">COMMUNITY</span>
+                </div>
+
+                <div class="stories-row">
+                    <button class="story add-story" id="addStory">
+                        <span class="story-ring add-ring"><span>+</span></span>
+                        <span>Your story</span>
+                    </button>
+                    <button class="story demo-story" data-story="Alex Morgan">
+                        <span class="story-ring ring-purple"><span>AM</span></span>
+                        <span>Alex</span>
+                    </button>
+                    <button class="story demo-story" data-story="Sophia Lee">
+                        <span class="story-ring ring-pink"><span>SL</span></span>
+                        <span>Sophia</span>
+                    </button>
+                    <button class="story demo-story" data-story="Ryan Cooper">
+                        <span class="story-ring ring-blue"><span>RC</span></span>
+                        <span>Ryan</span>
+                    </button>
+                    <button class="story demo-story" data-story="Mia Patel">
+                        <span class="story-ring ring-orange"><span>MP</span></span>
+                        <span>Mia</span>
+                    </button>
+                    <button class="story demo-story" data-story="Noah Wilson">
+                        <span class="story-ring ring-green"><span>NW</span></span>
+                        <span>Noah</span>
+                    </button>
+                </div>
+            </section>
+
+            <section class="composer card" id="createPost">
+                <div class="composer-top">
+                    <div class="avatar">A</div>
+                    <textarea id="postInput" rows="2" maxlength="1000"
+                        placeholder="What's on your mind? Share something with your community..."></textarea>
+                </div>
+                <div class="composer-bottom">
+                    <span class="muted small-text">Keep it positive. Make it meaningful.</span>
+                    <button class="primary-button" id="publishButton">＋ Create Post</button>
+                </div>
+            </section>
+
+            <section class="feed-section" id="feed">
+                <div class="section-heading">
+                    <div>
+                        <h2>Your Feed</h2>
+                        <p class="muted">Fresh thoughts from your community.</p>
+                    </div>
+                    <select id="feedSort" class="sort-select" aria-label="Sort feed">
+                        <option value="latest">Latest</option>
+                        <option value="popular">Most liked</option>
+                    </select>
+                </div>
+
+                <div id="postsContainer" class="posts-container">
+                    <article class="post-card card" data-demo-post>
+                        <div class="post-header">
+                            <div class="avatar avatar-purple">AM</div>
+                            <div class="post-author">
+                                <h3>Alex Morgan <span class="verified">✓</span></h3>
+                                <p>@alexmorgan · 12 min ago</p>
+                            </div>
+                            <button class="more-button" aria-label="Post options">•••</button>
+                        </div>
+                        <p class="post-text">Small steps every day lead to big changes. Keep learning, keep building, and never stop being curious. 🚀</p>
+                        <div class="post-tags">#GrowthMindset &nbsp; #KeepBuilding</div>
+                        <div class="post-stats"><span>♡ <b class="like-count">24</b> likes</span><span>8 comments</span></div>
+                        <div class="post-actions">
+                            <button class="post-action like-button">♡ <span>Like</span></button>
+                            <button class="post-action comment-button">▢ <span>Comment</span></button>
+                            <button class="post-action share-button">↗ <span>Share</span></button>
+                        </div>
+                        <div class="comment-area hidden">
+                            <input class="comment-input" placeholder="Write a comment..." maxlength="300">
+                            <button class="small-button send-comment">Send</button>
+                            <div class="comments-list"></div>
+                        </div>
+                    </article>
+
+                    <article class="post-card card" data-demo-post>
+                        <div class="post-header">
+                            <div class="avatar avatar-pink">SL</div>
+                            <div class="post-author">
+                                <h3>Sophia Lee</h3>
+                                <p>@sophialee · 35 min ago</p>
+                            </div>
+                            <button class="more-button" aria-label="Post options">•••</button>
+                        </div>
+                        <p class="post-text">There's something special about sharing what you create with people who appreciate the journey. What's one thing you're working on this week? 💜</p>
+                        <div class="post-tags">#Community &nbsp; #CreativeLife</div>
+                        <div class="post-stats"><span>♡ <b class="like-count">41</b> likes</span><span>12 comments</span></div>
+                        <div class="post-actions">
+                            <button class="post-action like-button">♡ <span>Like</span></button>
+                            <button class="post-action comment-button">▢ <span>Comment</span></button>
+                            <button class="post-action share-button">↗ <span>Share</span></button>
+                        </div>
+                        <div class="comment-area hidden">
+                            <input class="comment-input" placeholder="Write a comment..." maxlength="300">
+                            <button class="small-button send-comment">Send</button>
+                            <div class="comments-list"></div>
+                        </div>
+                    </article>
+
+                    <div id="emptyState" class="empty-state hidden">
+                        <div>⌕</div>
+                        <h3>No posts found</h3>
+                        <p>Try a different search or create a new post.</p>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <aside class="right-sidebar">
+            <section class="card side-card" id="discover">
+                <div class="section-heading compact-heading">
+                    <h2>Trending Topics</h2>
+                    <span class="trending-icon">↗</span>
+                </div>
+
+                <button class="trend-item" data-tag="#WebDevelopment">
+                    <span class="trend-number">01</span>
+                    <span><b>#WebDevelopment</b><small>2.4k posts</small></span>
+                    <span class="trend-arrow">↗</span>
+                </button>
+                <button class="trend-item" data-tag="#AIInnovation">
+                    <span class="trend-number">02</span>
+                    <span><b>#AIInnovation</b><small>1.8k posts</small></span>
+                    <span class="trend-arrow">↗</span>
+                </button>
+                <button class="trend-item" data-tag="#StudentLife">
+                    <span class="trend-number">03</span>
+                    <span><b>#StudentLife</b><small>950 posts</small></span>
+                    <span class="trend-arrow">↗</span>
+                </button>
+                <button class="trend-item" data-tag="#DesignInspiration">
+                    <span class="trend-number">04</span>
+                    <span><b>#DesignInspiration</b><small>720 posts</small></span>
+                    <span class="trend-arrow">↗</span>
+                </button>
+            </section>
+
+            <section class="card side-card" id="messages">
+                <div class="section-heading compact-heading">
+                    <h2>People to Follow</h2>
+                    <span class="muted small-text">Discover</span>
+                </div>
+
+                <div class="person-item">
+                    <div class="avatar avatar-blue">RC</div>
+                    <div class="person-info"><b>Ryan Cooper</b><small>UI/UX Designer</small></div>
+                    <button class="follow-button">Follow</button>
+                </div>
+                <div class="person-item">
+                    <div class="avatar avatar-orange">MP</div>
+                    <div class="person-info"><b>Mia Patel</b><small>Developer</small></div>
+                    <button class="follow-button">Follow</button>
+                </div>
+                <div class="person-item">
+                    <div class="avatar avatar-green">NW</div>
+                    <div class="person-info"><b>Noah Wilson</b><small>Tech enthusiast</small></div>
+                    <button class="follow-button">Follow</button>
+                </div>
+            </section>
+
+            <section class="community-note">
+                <span>✦</span>
+                <h3>Better together.</h3>
+                <p>Every connection starts with a hello. Find your people and grow together.</p>
+            </section>
+
+            <footer class="right-footer">
+                <span>About</span><span>Privacy</span><span>Guidelines</span>
+                <p>© 2026 ConnectSphere</p>
+            </footer>
+        </aside>
+    </div>
+
+    <div id="toast" class="toast" role="status" aria-live="polite"></div>
+</body>
+</html>

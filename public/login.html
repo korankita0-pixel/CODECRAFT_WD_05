@@ -1,0 +1,266 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login | ConnectSphere</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <style>
+        .auth-page {
+            min-height: 100vh;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            background: var(--surface);
+        }
+
+        .auth-visual {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 8%;
+            color: white;
+            background: radial-gradient(circle at top left, #a78bfa, transparent 48%),
+                        linear-gradient(145deg, #242044, #5940bb 65%, #8064f6);
+        }
+
+        .auth-visual .brand {
+            margin-bottom: auto;
+            align-self: flex-start;
+        }
+
+        .auth-visual h1 {
+            font-size: clamp(35px, 4vw, 55px);
+            line-height: 1.12;
+            letter-spacing: -2px;
+            margin: 65px 0 20px;
+        }
+
+        .auth-visual p {
+            max-width: 430px;
+            line-height: 1.9;
+            color: #e6e0ff;
+            font-size: 15px;
+        }
+
+        .visual-bottom {
+            margin-top: 65px;
+            font-size: 12px;
+            color: #d7ceff;
+        }
+
+        .auth-form-side {
+            display: grid;
+            place-items: center;
+            padding: 35px 24px;
+        }
+
+        .auth-form {
+            width: 100%;
+            max-width: 400px;
+        }
+
+        .auth-form h2 {
+            font-size: 31px;
+            letter-spacing: -1px;
+            margin-bottom: 9px;
+        }
+
+        .auth-subtitle {
+            color: var(--muted);
+            margin-bottom: 30px;
+            line-height: 1.7;
+        }
+
+        .form-group {
+            margin-bottom: 19px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-size: 12px;
+            font-weight: 700;
+        }
+
+        .form-group input {
+            width: 100%;
+            height: 47px;
+            padding: 0 13px;
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            outline: none;
+            background: var(--bg);
+            color: var(--text);
+        }
+
+        .form-group input:focus {
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px #7357ed18;
+        }
+
+        .password-wrap {
+            display: flex;
+            gap: 8px;
+        }
+
+        .password-wrap input {
+            flex: 1;
+            min-width: 0;
+        }
+
+        .show-password {
+            padding: 0 11px;
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            background: var(--surface);
+            color: var(--text);
+            font-size: 11px;
+        }
+
+        .auth-submit {
+            width: 100%;
+            min-height: 47px;
+            margin-top: 5px;
+            border: 0;
+            border-radius: 10px;
+            color: white;
+            background: linear-gradient(135deg, #8b6bfa, #694be8);
+            font-weight: 700;
+        }
+
+        .auth-submit:hover {
+            filter: brightness(1.06);
+        }
+
+        .auth-message {
+            margin-top: 15px;
+            font-size: 12px;
+            line-height: 1.6;
+        }
+
+        .auth-switch {
+            text-align: center;
+            margin-top: 24px;
+            color: var(--muted);
+            font-size: 13px;
+        }
+
+        .auth-switch a, .back-home {
+            color: var(--primary);
+            font-weight: 700;
+        }
+
+        .back-home {
+            display: inline-block;
+            margin-top: 25px;
+            font-size: 12px;
+        }
+
+        @media (max-width: 760px) {
+            .auth-page {
+                grid-template-columns: 1fr;
+            }
+
+            .auth-visual {
+                min-height: 220px;
+                padding: 25px;
+            }
+
+            .auth-visual h1 {
+                font-size: 32px;
+                margin: 30px 0 10px;
+            }
+
+            .auth-visual p {
+                font-size: 13px;
+            }
+
+            .visual-bottom {
+                display: none;
+            }
+
+            .auth-form-side {
+                padding: 40px 24px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <main class="auth-page">
+        <section class="auth-visual">
+            <a class="brand" href="/">
+                <span class="brand-icon">C</span>
+                <span>ConnectSphere</span>
+            </a>
+
+            <div>
+                <h1>Your people.<br>Your stories.<br>Your space.</h1>
+                <p>
+                    Connect with your community, share your ideas,
+                    and discover new perspectives every day.
+                </p>
+            </div>
+
+            <div class="visual-bottom">ConnectSphere · Connect. Share. Discover.</div>
+        </section>
+
+        <section class="auth-form-side">
+            <form class="auth-form" id="loginForm">
+                <h2>Welcome back 👋</h2>
+                <p class="auth-subtitle">
+                    Sign in to continue your ConnectSphere journey.
+                </p>
+
+                <div class="form-group">
+                    <label for="email">Email address</label>
+                    <input type="email" id="email" name="email"
+                           placeholder="you@example.com" autocomplete="email" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <div class="password-wrap">
+                        <input type="password" id="password" name="password"
+                               placeholder="Enter your password"
+                               autocomplete="current-password" required>
+                        <button type="button" class="show-password" id="togglePassword">
+                            Show
+                        </button>
+                    </div>
+                </div>
+
+                <button class="auth-submit" type="submit">Sign In →</button>
+                <p class="auth-message" id="authMessage" role="status"></p>
+
+                <p class="auth-switch">
+                    Don't have an account? <a href="/register.html">Create one</a>
+                </p>
+
+                <a class="back-home" href="/">← Back to home</a>
+            </form>
+        </section>
+    </main>
+
+    <script>
+        const passwordInput = document.getElementById("password");
+        const togglePassword = document.getElementById("togglePassword");
+
+        togglePassword.addEventListener("click", () => {
+            const showing = passwordInput.type === "text";
+            passwordInput.type = showing ? "password" : "text";
+            togglePassword.textContent = showing ? "Show" : "Hide";
+        });
+
+        document.getElementById("loginForm").addEventListener("submit", async (event) => {
+            event.preventDefault();
+
+            const message = document.getElementById("authMessage");
+            message.style.color = "#d97706";
+            message.textContent = "Login backend will be connected in the next step.";
+
+            // This page does not authenticate users yet.
+        });
+    </script>
+</body>
+</html>
